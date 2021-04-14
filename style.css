@@ -439,3 +439,30 @@
 .testimonial__speech-bubble > .name > a {
   color : var(--color-pink);
 }
+
+/* Contact */
+#contact {
+  background-color : var(--color-pink);
+}
+
+.contact__title,
+.contact__email,
+.contact__links,
+.contact__rights { 
+  color : var(--color-white);
+}
+
+.contact__title {
+  margin : 32px 0;
+}
+
+.contact__links {
+  margin : 24px 0 ;
+  font-size : var(--font-large);
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  transition : all calc(var(--animation-duration)/2) ease-in;
+  color : var(--color-yellow);
+}
