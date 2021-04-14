@@ -140,6 +140,21 @@
     background-color : var(--color-dark-pink);
   }
 
+  .navbar__toggle-btn {
+    background-color: transparent;
+    outline: none;
+    border : none;
+    position : absolute;
+    top : 19px;
+    right: 15px;
+    font-size : 25px;
+    display : none;
+  }
+
+  .navbar__toggle-btn i {
+    color : white;
+  }
+
   /* home */
   
   #home {
@@ -465,4 +480,47 @@
   transform: scale(1.1);
   transition : all calc(var(--animation-duration)/2) ease-in;
   color : var(--color-yellow);
+}
+
+/* media */
+@media screen and (max-width:768px){
+  /* Navbar */
+  .navbar__toggle-btn {
+    display : block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu { 
+    flex-direction: column;
+    text-align : center;
+    width : 100%;
+    display : none;
+  }
+
+  /* Skills */
+  .skillset {
+    flex-direction: column;
+  }
+
+  /* About */
+  .about__majors {
+    flex-direction: column;
+  }
+  .major {
+    margin : 15px;
+  }
+  .about__jobs {
+    display : flex;
+    flex-direction: column;
+    align-items:  center;
+  }
+
+  /* Work */
+  .project {
+    flex-grow : 1;
+  }
 }
