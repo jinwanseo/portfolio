@@ -4,6 +4,11 @@
 //메뉴 바 스크롤
 document.addEventListener('scroll',e=>{
     let navbar = document.querySelector('#navbar');
+    if(window.scrollY >= 400)
+        document.querySelector('.arrow-up').classList.add('visible');
+    else 
+        document.querySelector('.arrow-up').classList.remove('visible');
+        
     if(navbar.getBoundingClientRect().height <= window.scrollY) navbar.classList.add('navbar--dark');
     else navbar.classList.remove('navbar--dark');
 });
@@ -26,6 +31,12 @@ window.addEventListener('scroll',e=>{
     let elem_height = document.querySelector('#home').getBoundingClientRect().height;
     let opacity_value = ((elem_height-window.scrollY)/elem_height);
     document.querySelector('.home__container').style.opacity = opacity_value;
+});
+
+//Scroll Button
+//상단으로 스크롤링
+document.querySelector('.arrow-up').addEventListener('click',e=>{
+    scrollLink('#home');
 });
 
 //scroll down func

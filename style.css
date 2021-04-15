@@ -492,6 +492,27 @@
   color : var(--color-yellow);
 }
 
+/* Scroll */
+.arrow-up {
+  position : fixed;
+  border : 3px solid var(--color-white);
+  outline : none;
+  background-color: var(--color-dark-pink);
+  color : var(--color-white);
+  bottom : 50px;
+  font-size : 50px;
+  right: 30px;
+  border-radius: 50%;
+  opacity : 0;
+  pointer-events: none;
+}
+
+.arrow-up.visible {
+  pointer-events:all;
+  transition : all calc(var(--animation-duration)*2) ease;
+  opacity: 1;
+}
+
 /* media */
 @media screen and (max-width:768px){
   /* Navbar */
