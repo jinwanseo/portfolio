@@ -193,6 +193,7 @@
     border : 1px solid var(--color-white);
     color : white;
     border-radius: var(--size-border-radius);
+    cursor : pointer;
   }
 
   /* About */
