@@ -136,6 +136,7 @@
     padding: 8px 12px;
     margin : 0px 4px;
     cursor : pointer;
+    border : 1px solid transparent;
     border-radius: var(--size-border-radius);
   }
 
@@ -156,6 +157,16 @@
     top : 19px;
     right: 15px;
     font-size : 25px;
+    display : none;
+  }
+
+  .navbar__toggle-btn .bar.active,
+  .navbar__toggle-btn .exit.active {
+    display : inline;
+  }
+
+  .navbar__toggle-btn .exit,
+  .navbar__toggle-btn .bar{
     display : none;
   }
 
@@ -397,7 +408,6 @@
     opacity: 0;
     transition : all var(--animation-duration) ease-in;
   }
-
   .project__description__title,
   .project__description__description{
     opacity: 0;
@@ -418,7 +428,7 @@
 
 
   .project__description > h3 {
-    color : white;
+    color : var(--color-yellow);
   }
 
   .project__description > h3:after {
@@ -537,11 +547,19 @@
     align-items: flex-start;
   }
 
+  #navbar.active{
+    background-color: var(--color-pink);
+  }
+
   .navbar__menu { 
+    display : none;
     flex-direction: column;
     text-align : center;
     width : 100%;
-    display : none;
+  }
+
+  .navbar__menu.active {
+    display : flex;
   }
 
   /* Skills */

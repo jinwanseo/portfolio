@@ -17,9 +17,15 @@ document.addEventListener('scroll',e=>{
 document.querySelector('.navbar__menu').addEventListener('click',e=>{
     if(e.target.nodeName === 'LI'){
         document.querySelector('.menu__item.active').classList.remove('active');
+        navbarStateChange();
         scrollLink(e.target.dataset.link);
         e.target.classList.add('active');
     }
+});
+
+//햄버거 버튼 클릭시
+document.querySelector('.navbar__toggle-btn').addEventListener('click',e=>{
+    navbarStateChange();
 });
 
 //Home
@@ -67,4 +73,11 @@ document.querySelector('.work__categories').addEventListener('click',e=>{
 //scroll down func
 const scrollLink = (selector)=>{
     document.querySelector(selector).scrollIntoView({behavior:'smooth'});
+}
+
+const navbarStateChange = ()=>{
+    document.querySelector('.navbar__menu').classList.toggle('active');
+    document.querySelector('#navbar').classList.toggle('active');
+    document.querySelector('.navbar__toggle-btn .bar').classList.toggle('active');
+    document.querySelector('.navbar__toggle-btn .exit').classList.toggle('active');
 }
