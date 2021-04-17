@@ -207,6 +207,11 @@
     cursor : pointer;
   }
 
+  .home__contact:hover { 
+    background-color : var(--color-yellow);
+    color : var(--color-dark-grey);
+  }
+
   /* About */
   .about__majors {
     display : flex;
@@ -316,7 +321,16 @@
     height : 3px;
     background-color: var(--color-orange);
   }
-
+  
+  .skill__value.effect {
+    width : 90%;
+    transition: width calc(var(--animation-duration)*1.5) ease-in;
+  }
+  .skill__value.start {
+    width : 0%;
+    transition: none;
+  }
+  
   .tools, .etc {
     padding : 20px;
   }
@@ -344,6 +358,7 @@
 
   .category__count {
     display : inline-block;
+    position : absolute;
     background-color: var(--color-orange);
     width :24px;
     height: 24px;
@@ -535,11 +550,33 @@
   opacity: 1;
 }
 
+
 /* media */
 @media screen and (max-width:768px){
+  :root {
+        /* Font size */
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;    
+  }
+
+  .home__avatar {
+    width : 150px;
+    height: 150px;
+  }
+
+  .section {
+    padding : 16px;
+    padding-top : 45px;
+  }
+
   /* Navbar */
   .navbar__toggle-btn {
     display : block;
+    right: 16px;
+    top : 16px;
   }
 
   #navbar {
@@ -570,6 +607,7 @@
   /* About */
   .about__majors {
     flex-direction: column;
+    margin : 25px 0;
   }
   .major {
     margin : 15px;
@@ -580,8 +618,45 @@
     align-items:  center;
   }
 
+  /* Testimonial */
+  .testimonials {
+    margin : 0; 
+  }
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+    margin : 32px 0;
+  }
+
+  .testimonial__avatar:nth-child(odd),
+  .testimonial__avatar:nth-child(even)
+  {
+    width : 100px;
+    height: 100px;
+    margin : 10px;
+    order : 0;
+  }
+  .testimonial__speech-bubble {
+    order : 1;
+  }
+
   /* Work */
   .project {
     flex-grow : 1;
+  }
+
+  .work__categories {
+    user-select: none;
+    display : flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .arrow-up {
+    width : 40px;
+    height: 40px;
+    font-size : 20px;
+    bottom : 16px;
+    right: 16px;
   }
 }

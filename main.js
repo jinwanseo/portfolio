@@ -47,6 +47,23 @@ document.querySelector('.arrow-up').addEventListener('click',e=>{
     scrollLink('#home');
 });
 
+//Skill
+document.querySelector('.skillset__left').addEventListener('mouseover',e=>{
+    let overSkill = e.target;
+    if(e.target.classList.contains('skill__value')) overSkill = e.target;
+    else if(e.target.classList.contains('skill__bar')) overSkill = e.target.children[0];
+    else if(e.target.classList.contains('skill__description')) overSkill = e.target.nextElementSibling.children[0];
+    else if(e.target.classList.contains('skill')) overSkill = e.target.children[1].children[0];
+    else return;
+    console.log(overSkill);
+    overSkill.classList.add('start');
+    overSkill.classList.add('effect');
+
+    setTimeout(() => {
+        overSkill.classList.remove('start');
+    }, 200);
+}); 
+
 //Work
 document.querySelector('.work__categories').addEventListener('click',e=>{
     document.querySelector('.work__projects').classList.remove('active');
