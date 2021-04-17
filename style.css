@@ -354,6 +354,14 @@
     display : flex;
     flex-wrap: wrap;
     justify-content: center;
+    transform : translateY(5px) scale(0.98);
+    opacity: 0.8;
+  }
+
+  .work__projects.active {
+    transform :translateY(0) scale(1);
+    opacity: 1;
+    transition : all var(--animation-duration) ease-in;
   }
 
   .work__projects > .project { 
@@ -361,10 +369,14 @@
     justify-content: center;
     align-items:  center;
     position : relative;
-    width : 280px;
-    height: 250px;
+    width : 200px;
+    height: 180px;
     margin : 2px;
     background-color: var(--color-light-white);
+  }
+
+  .project.visible {
+    display : none;
   }
 
   .project__img {
@@ -395,7 +407,7 @@
   }
 
   .project:hover .project__description{
-    opacity: 0.8;;
+    opacity: 0.8;
   }
 
   .project__description:hover .project__description__title,

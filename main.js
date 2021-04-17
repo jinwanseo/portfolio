@@ -16,7 +16,9 @@ document.addEventListener('scroll',e=>{
 //메뉴바 클릭시 이동
 document.querySelector('.navbar__menu').addEventListener('click',e=>{
     if(e.target.nodeName === 'LI'){
+        document.querySelector('.menu__item.active').classList.remove('active');
         scrollLink(e.target.dataset.link);
+        e.target.classList.add('active');
     }
 });
 
@@ -37,6 +39,29 @@ window.addEventListener('scroll',e=>{
 //상단으로 스크롤링
 document.querySelector('.arrow-up').addEventListener('click',e=>{
     scrollLink('#home');
+});
+
+//Work
+document.querySelector('.work__categories').addEventListener('click',e=>{
+    document.querySelector('.work__projects').classList.remove('active');
+    let filter = e.target.dataset.filter !== undefined ? e.target.dataset.filter : e.target.parentElement.dataset.filter;
+    if(filter) {
+        //버튼 활성화
+        document.querySelector('.category__btn.active').classList.remove('active');
+        let actElem = document.querySelector(`.category__btn[data-filter="${filter}"]`);
+        actElem.classList.add('active');
+
+        //프로젝트 활성화
+        document.querySelectorAll(`.project`).forEach(elem => {
+            elem.classList.remove('visible');
+            if(elem.dataset.filter !== filter && filter !== 'all') 
+                elem.classList.add('visible');
+        });
+        
+    }
+    setTimeout(() => {
+    document.querySelector('.work__projects').classList.add('active');
+    }, 100);
 });
 
 //scroll down func
